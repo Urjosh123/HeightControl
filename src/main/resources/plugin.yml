@@ -1,0 +1,43 @@
+name: HeightControl
+version: '${project.version}'
+main: dev.ghost.heightcontrol.HeightControl
+api-version: '1.21'
+description: Per-area custom build height control
+authors: [Ghost]
+
+commands:
+  shovel:
+    description: Gives you the height-control selection shovel
+    usage: /shovel
+    permission: heightcontrol.use
+  savearea:
+    description: Save your current selection as a named area
+    usage: /savearea <name>
+    permission: heightcontrol.use
+  setheight:
+    description: Set the max build height for a saved area
+    usage: /setheight <area> <height>
+    permission: heightcontrol.use
+  listheights:
+    description: List all saved areas and their heights
+    usage: /listheights
+    permission: heightcontrol.use
+  deletearea:
+    description: Delete a saved area
+    usage: /deletearea <area>
+    permission: heightcontrol.admin
+  areainfo:
+    description: Get info about an area
+    usage: /areainfo <area>
+    permission: heightcontrol.use
+
+permissions:
+  heightcontrol.use:
+    description: Use HeightControl commands
+    default: op
+  heightcontrol.admin:
+    description: Admin commands
+    default: op
+  heightcontrol.bypass:
+    description: Bypass height restrictions
+    default: op
